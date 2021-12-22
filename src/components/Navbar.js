@@ -39,6 +39,7 @@ const MenuBars = styled(FaBars)`
 		cursor: pointer;
 		top: 0;
 		right: 0;
+		color: #fff;
 	}
 `;
 
