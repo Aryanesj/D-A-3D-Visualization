@@ -14,7 +14,7 @@ const Nav = styled.nav`
  	position: fixed;
  	width: 100%;
  	background: teal;
- `;
+ `
 
 const NavLink = css`
  	color: white;
@@ -24,12 +24,12 @@ const NavLink = css`
  	height: 100%;
  	cursor: pointer;
  	text-decoration: none;
- `;
+ `
 
 const Logo = styled(Link)`
 	${NavLink}
 	font-style: italic;
- `;
+ `
 
 const MenuBars = styled(FaBars)`
 	display: none;
@@ -41,7 +41,7 @@ const MenuBars = styled(FaBars)`
 		right: 0;
 		color: #fff;
 	}
-`;
+`
 
 const NavBtn = styled.div`
 	display: flex;
@@ -51,7 +51,7 @@ const NavBtn = styled.div`
 	@media screen and (max-width: 768px) {
 		display: none;
 	}
- `;
+ `
 
 const NavMenu = styled.div`
 	display: flex;
@@ -61,11 +61,11 @@ const NavMenu = styled.div`
 	@media screen and (max-width: 768px) {
 		display: none;
 	}
- `;
+ `
 
 const NavMenuLinks = styled(Link)`
  	${NavLink}
- `;
+ `
 
 const Navbar = () => {
 	return (

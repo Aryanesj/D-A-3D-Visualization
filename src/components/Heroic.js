@@ -19,8 +19,11 @@ const HeroicWrapper = styled.div`
 `
 
 const HeroicSlide = styled.div``
+
 const HeroicSlider = styled.div``
+
 const HeroicImage = styled.img``
+
 const HeroicContent = styled.div``	
 
 const Heroic = ({ slides }) => {
