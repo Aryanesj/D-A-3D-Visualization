@@ -80,7 +80,7 @@ const Navbar = () => {
 				))}
 			</NavMenu>
 			<NavBtn>
-				<Button to='/contact' primary={true}>
+				<Button to='/contact' primary='true'>
 					Contact Us
 				</Button>
 			</NavBtn>

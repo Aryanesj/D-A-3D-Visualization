@@ -5,7 +5,7 @@ import ImageFour from '../images/house4.jpg'
 
 export const SliderData = [
 	{
-		title: 'Херовый вид на Бали, Индонезия',
+		title: 'Курва де ла бляда, Пильша',
 		price: '$69,000',
 		path: '/homes',
 		label: 'Viev design',
@@ -13,7 +13,7 @@ export const SliderData = [
 		alt: 'Room'
 	},
 	{
-		title: 'Паршивая Сан Роза, Коста рика',
+		title: 'Паршивая Сунь Поза, Костя рока',
 		price: '$29,000',
 		path: '/homes',
 		label: 'Viev design',
@@ -21,7 +21,7 @@ export const SliderData = [
 		alt: 'Room'
 	},
 	{
-		title: 'Сарай Калабасас, Калифорния',
+		title: 'Сарай Калюбасас, Каляфарния',
 		price: '$39,000',
 		path: '/homes',
 		label: 'Viev design',
@@ -29,7 +29,7 @@ export const SliderData = [
 		alt: 'Room'
 	},
 	{
-		title: 'Толкан ин Хьюстон, Техас',
+		title: 'Толкан ун Хьюстон, Техакс',
 		price: '$109,000',
 		path: '/homes',
 		label: 'Viev design',
