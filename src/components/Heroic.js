@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styled, {css} from 'styled-components/macro'
 import { Button } from './Button.js'
 import { IoMdArrowRoundForward } from 'react-icons/io'
@@ -37,7 +37,7 @@ const HeroicSlider = styled.div`
 	align-items: center;
 	justify-content: center;
 
-	&::before {
+	&::before {     /* Затемняет контейнер */
 		content: '';
 		position: absolute; 
 		z-index: 2;
@@ -69,11 +69,11 @@ const HeroicContent = styled.div`
 	display: flex;
 	flex-direction: column;
 	max-width: 1600px;
-	width: calc(100% - 100px);
+	width: calc(100% - 100px); /* Сдвигает объект с центра влево */
 	color: white;
 
 	h1 {
-		font-size: clamp(1rem, 8vw, 2rem);
+		font-size: clamp(1rem, 8vw, 2rem); /*Изменение шрифта от ширины экрана от малого к большему*/
 		font-weight: 400;
 		text-transform: uppercase;
 		text-shadow: 0px 0px 20px rgba(0,0,0,0.4);
@@ -87,7 +87,10 @@ const HeroicContent = styled.div`
 	}
 `
 
-const Arrow = styled(IoMdArrowRoundForward)``
+const Arrow = styled(IoMdArrowRoundForward)`
+	margin-left: 0.5rem;
+
+`
 
 const SliderButtons = styled.div`
 	position: absolute;
@@ -106,32 +109,70 @@ const arrowButtons = css`
 	border-radius: 50px;
 	padding: 10px;
 	margin-right: 1rem;
-	user-select: none;
-	transition: 0.5s;
+	user-select: none; /* Ограницение безумного клика */
+	transition: 0.5s; /* Время анимации */
 
 	&:hover {
 		background: teal;
-		transform: scale(1.05);
+		transform: scale(1.05); /* Увеличение объекта */
 	}
 `
 
-
-const PrewArrow = styled(IoArrowForward)`
+const NextArrow = styled(IoArrowForward)`
 	${arrowButtons}
 `
 
-const NextArrow = styled(IoArrowBack)`
+const PrewArrow = styled(IoArrowBack)`
 	${arrowButtons}
 `
+
+
 
 const Heroic = ({ slides }) => {
+  const [current, setCurrent] = useState(0)
+  const length = slides.length
+  const timeout = useRef(null)
+
+const nextSlide = () => {
+	setCurrent(current === length - 1 ? 0 : current + 1)
+	if(timeout.current) {
+			clearTimeout(timeout, current)
+		}
+	// console.log(current)
+}
+
+const prevSlide = () => {
+	setCurrent(current === 0 ? length - 1 : current - 1)
+	if(timeout.current) {
+			clearTimeout(timeout, current)
+		}
+	// console.log(current)
+};
+
+// useEffect(() => { /* Задает автоматическое пролистывание слайдов */
+// 	const nextSlide = () => {
+// 		setCurrent(current => (current === length - 1 ? 0 : current + 1))
+// 	}
+// 	timeout.current = setTimeout(nextSlide, 4000)
+// 	return function() {
+// 		if(timeout.current) {
+// 			clearTimeout(timeout, current)
+// 		}
+// 	}
+// }, [current, length]);
+
+	if(!Array.isArray(slides) || slides.length <= 0) {
+		return null
+	}
+
 	return (
 		<HeroicSection>
 			<HeroicWrapper>
 				{slides.map((slide, index) => {
 					return (
 						<HeroicSlide key={index}>
-							<HeroicSlider>
+						  {index === current && (
+						  		<HeroicSlider>
 								<HeroicImage src={slide.image} alt={slide.alt}/>
 									<HeroicContent>
 										<h1>{slide.title}</h1>
@@ -145,12 +186,13 @@ const Heroic = ({ slides }) => {
 										</Button>
 									</HeroicContent>
 							</HeroicSlider>
+						  	)}
 						</HeroicSlide>
 					)
 				})}
 				<SliderButtons>
-					<NextArrow />
-					<PrewArrow />
+				 	<PrewArrow onClick={prevSlide}/>
+					<NextArrow onClick={nextSlide}/>
 				</SliderButtons>
 			</HeroicWrapper>
 		</HeroicSection>
