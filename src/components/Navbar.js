@@ -66,11 +66,11 @@ const NavMenuLinks = styled(Link)`
  	${NavLink}
  `
 
-const Navbar = () => {
+const Navbar = ({toggle}) => {
 	return (
 		<Nav>
 			<Logo to='/'>There Logo</Logo>
-			<MenuBars />
+			<MenuBars onClick={toggle}/>
 			<NavMenu>
 				{menuData.map((item, index) => (
 					<NavMenuLinks to={item.link} key={index}>
