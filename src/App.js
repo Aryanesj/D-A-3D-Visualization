@@ -5,8 +5,9 @@ import Heroic from './components/Heroic.js'
 import { SliderData } from './data/SliderData.js'
 import Dropdown from './components/Dropdown.js'
 import InfoSection from './components/InfoSection.js'
-import { InfoData } from './data/InfoData.js'
+import { InfoData, InfoDataTwo } from './data/InfoData.js'
 import Listings from './components/Listings.js'
+import Features from './components/Features.js'
  
 function App() {
   const [isOpen, setIsOpen] = useState(false)
@@ -23,6 +24,8 @@ function App() {
       <Heroic slides={SliderData} />
       <InfoSection {...InfoData}/>
       <Listings />
+      <Features />
+      <InfoSection {...InfoDataTwo}/>
     </>
   );
 }
