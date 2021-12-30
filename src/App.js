@@ -6,6 +6,7 @@ import { SliderData } from './data/SliderData.js'
 import Dropdown from './components/Dropdown.js'
 import InfoSection from './components/InfoSection.js'
 import { InfoData } from './data/InfoData.js'
+import Listings from './components/Listings.js'
  
 function App() {
   const [isOpen, setIsOpen] = useState(false)
@@ -21,6 +22,7 @@ function App() {
       <Dropdown isOpen={isOpen} toggle={toggle} />
       <Heroic slides={SliderData} />
       <InfoSection {...InfoData}/>
+      <Listings />
     </>
   );
 }

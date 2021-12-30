@@ -69,21 +69,21 @@ const HeroicContent = styled.div`
 	display: flex;
 	flex-direction: column;
 	max-width: 1600px;
-	width: calc(100% - 100px); /* Сдвигает объект с центра влево */
+	width: calc(100% - 100px); /* Сдвигает объект слево в центр */
 	color: white;
 
 	h1 {
 		font-size: clamp(1rem, 8vw, 2rem); /*Изменение шрифта от ширины экрана от малого к большему*/
 		font-weight: 400;
 		text-transform: uppercase;
-		text-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+		text-shadow: 0px 0px 20px rgba(0,0,0,0.5);
 		text-align: left;
 		margin-bottom: 0.8rem;
 	}
 
 	p {
 		margin-bottom: 1.2rem;
-		text-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+		text-shadow: 0px 0px 20px rgba(0,0,0,0.5);
 	}
 `
 
@@ -125,8 +125,6 @@ const NextArrow = styled(IoArrowForward)`
 const PrewArrow = styled(IoArrowBack)`
 	${arrowButtons}
 `
-
-
 
 const Heroic = ({ slides }) => {
   const [current, setCurrent] = useState(0)

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Button } from './Button.js'
 
 const Section = styled.section`
+	background: gray;
 	width: 100%;
 	height: 100%;
 	padding: 4rem 0rem;
@@ -12,7 +13,7 @@ const Container = styled.div`
 	padding: 3rem calc((100vw - 1300px) / 2);
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 800px;
+	grid-template-rows: 700px;
 
 	@media screen and (max-width: 768px) {
 		grid-template-columns: 1fr;
@@ -40,7 +41,7 @@ const ColumnLeft = styled.div`
 
 const ColumnRight = styled.div`
 	padding: 1rem 2rem;
-	order: ${({reverse}) => (reverse ? '1' : '2')};
+   /* order: ${({reverse}) => (reverse ? '1' : '2')}; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
