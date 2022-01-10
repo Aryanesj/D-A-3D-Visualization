@@ -8,6 +8,7 @@ import InfoSection from './components/InfoSection.js'
 import { InfoData, InfoDataTwo } from './data/InfoData.js'
 import Listings from './components/Listings.js'
 import Features from './components/Features.js'
+import Footer from './components/Footer.js'
  
 function App() {
   const [isOpen, setIsOpen] = useState(false)
@@ -26,6 +27,7 @@ function App() {
       <Listings />
       <Features />
       <InfoSection {...InfoDataTwo}/>
+      <Footer />
     </>
   );
 }
