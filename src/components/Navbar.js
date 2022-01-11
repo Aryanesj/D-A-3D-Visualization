@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import styled, { css } from 'styled-components/macro'
 import { menuData } from '../data/MenuData.js'
 import { Button } from './Button.js'
@@ -67,8 +67,36 @@ const NavMenuLinks = styled(Link)`
  `
 
 const Navbar = ({toggle}) => {
+	const [navbar, setNavbar] = useState(false)
+	const location = useLocation()
+
+	const changeBackground = () => {
+		if(window.pageYOffset >= 610) {
+			setNavbar(true)
+		} else {
+			setNavbar(false)
+		}
+	};
+
+	useEffect(() => {
+		const watchScroll = () => {
+			window.addEventListener('scroll', changeBackground)
+		}
+
+		watchScroll()
+
+		return () => {
+			window.removeEventListener('scroll', changeBackground)
+		}
+	}, []);
+
+	let style = {
+		backgroundColor: navbar || location.pathname !== '/' ? '#CD853F' : 'transparent',
+		transition: '0.5s'
+	}
+
 	return (
-		<Nav>
+		<Nav style={style}>
 			<Logo to='/'>There Logo</Logo>
 			<MenuBars onClick={toggle}/>
 			<NavMenu>
