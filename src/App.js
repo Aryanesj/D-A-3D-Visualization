@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import Navbar from './components/Navbar.js'
 import GlobalStyle from './globalStyle.js'
-import Heroic from './components/Heroic.js'
-import { SliderData } from './data/SliderData.js'
 import Dropdown from './components/Dropdown.js'
-import InfoSection from './components/InfoSection.js'
-import { InfoData, InfoDataTwo } from './data/InfoData.js'
-import Listings from './components/Listings.js'
-import Features from './components/Features.js'
 import Footer from './components/Footer.js'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages'
+import About from './pages/About.js'
+import Homes from './pages/Homes'
+import Contact from './pages/Contact.js'
+import Rentals from './pages/Rentals.js'
  
 function App() {
   const [isOpen, setIsOpen] = useState(false)
@@ -22,11 +22,13 @@ function App() {
       <GlobalStyle />
       <Navbar toggle={toggle}/>
       <Dropdown isOpen={isOpen} toggle={toggle} />
-      <Heroic slides={SliderData} />
-      <InfoSection {...InfoData}/>
-      <Listings />
-      <Features />
-      <InfoSection {...InfoDataTwo}/>
+        <Routes>
+          <Route path='/' exact element={<Home/>} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/homes' element={<Homes/>} />
+          <Route path='/rentals' element={<Rentals/>} />
+          <Route path='/contact' element={<Contact/>} />
+        </Routes>
       <Footer />
     </>
   );
