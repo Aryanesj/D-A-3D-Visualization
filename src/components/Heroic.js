@@ -3,6 +3,7 @@ import styled, {css} from 'styled-components/macro'
 import { Button } from './Button.js'
 import { IoMdArrowRoundForward } from 'react-icons/io'
 import { IoArrowForward, IoArrowBack } from 'react-icons/io5'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const HeroicSection = styled.section`
 	height: 100vh;
@@ -53,8 +54,8 @@ const HeroicSlider = styled.div`
 
 	}
 `
-
-const HeroicImage = styled.img`
+				// тут примениение framer motion к изображению
+const HeroicImage = styled(motion.img)`
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -163,15 +164,27 @@ useEffect(() => { /* Задает автоматическое пролисты�
 		return null
 	}
 
+	const variants = {
+		hidden: { opacity: 0 },
+		visible: { opacity: 1, transition: { duration: 1 } },
+		exit: { opacity: 0 }
+	};
+
 	return (
 		<HeroicSection>
 			<HeroicWrapper>
+			<AnimatePresence>
 				{slides.map((slide, index) => {
 					return (
 						<HeroicSlide key={index}>
 						  {index === current && (
 						  		<HeroicSlider>
-								<HeroicImage src={slide.image} alt={slide.alt}/>
+								<HeroicImage src={slide.image} alt={slide.alt}  
+									initial='hidden'
+									animate='visible'
+									exit="exit"
+									variants={variants}
+								/>
 									<HeroicContent>
 										<h1>{slide.title}</h1>
 										<p>{slide.price}</p>
@@ -188,6 +201,7 @@ useEffect(() => { /* Задает автоматическое пролисты�
 						</HeroicSlide>
 					)
 				})}
+				</AnimatePresence>
 				<SliderButtons>
 				 	<PrewArrow onClick={prevSlide}/>
 					<NextArrow onClick={nextSlide}/>
