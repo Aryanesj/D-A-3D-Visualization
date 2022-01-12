@@ -147,17 +147,17 @@ const prevSlide = () => {
 	// console.log(current)
 };
 
-// useEffect(() => { /* Задает автоматическое пролистывание слайдов */
-// 	const nextSlide = () => {
-// 		setCurrent(current => (current === length - 1 ? 0 : current + 1))
-// 	}
-// 	timeout.current = setTimeout(nextSlide, 4000)
-// 	return function() {
-// 		if(timeout.current) {
-// 			clearTimeout(timeout, current)
-// 		}
-// 	}
-// }, [current, length]);
+useEffect(() => { /* Задает автоматическое пролистывание слайдов */
+	const nextSlide = () => {
+		setCurrent(current => (current === length - 1 ? 0 : current + 1))
+	}
+	timeout.current = setTimeout(nextSlide, 10000)
+	return function() {
+		if(timeout.current) {
+			clearTimeout(timeout, current)
+		}
+	}
+}, [current, length]);
 
 	if(!Array.isArray(slides) || slides.length <= 0) {
 		return null
