@@ -98,10 +98,22 @@ const Listings = () => {
 		<Section>
 			<Container>
 				<Heading>
-					<h1>View our newest Design</h1>
+					<h1 
+						data-aos='zoom-out-right'
+						data-aos-duration='1500'
+						data-aos-delay='250'
+						data-aos-once='true'
+						data-aos-anchor-placement='center bottom'
+					>View our newest Design</h1>
 				</Heading>
 				<InfoRow>
-					<InfoWrap>
+					<InfoWrap
+						data-aos='zoom-out-up'
+						data-aos-duration='1600'
+						data-aos-delay='300'
+						data-aos-once='true'
+						data-aos-anchor-placement='center bottom'
+					>
 						<Image src={DesignOne} alt='design' />
 						<h2>8 bed 10 bath House in Venice, California</h2>
 						<InfoLink to='/'>
@@ -109,7 +121,13 @@ const Listings = () => {
 							<Arrow />
 						</InfoLink>
 					</InfoWrap>
-					<InfoWrap>
+					<InfoWrap
+						data-aos='zoom-out-down'
+						data-aos-duration='1700'
+						data-aos-delay='450'
+						data-aos-once='true'
+						data-aos-anchor-placement='center bottom'
+					>
 						<ImageTwo src={DesignTwo} alt='design' />
 						<h2>4 bed 2 bath House in Kiev, Usraina</h2>
 						<InfoLink to='/'>

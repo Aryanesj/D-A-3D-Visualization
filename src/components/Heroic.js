@@ -114,7 +114,7 @@ const arrowButtons = css`
 	transition: 0.5s; /* Время анимации */
 
 	&:hover {
-		background: teal;
+		background: #CD853F;
 		transform: scale(1.05); /* Увеличение объекта */
 	}
 `
@@ -148,25 +148,25 @@ const prevSlide = () => {
 	// console.log(current)
 };
 
-useEffect(() => { /* Задает автоматическое пролистывание слайдов */
-	const nextSlide = () => {
-		setCurrent(current => (current === length - 1 ? 0 : current + 1))
-	}
-	timeout.current = setTimeout(nextSlide, 10000)
-	return function() {
-		if(timeout.current) {
-			clearTimeout(timeout, current)
-		}
-	}
-}, [current, length]);
+// useEffect(() => { /* Задает автоматическое пролистывание слайдов */
+// 	const nextSlide = () => {
+// 		setCurrent(current => (current === length - 1 ? 0 : current + 1))
+// 	}
+// 	timeout.current = setTimeout(nextSlide, 15000)
+// 	return function() {
+// 		if(timeout.current) {
+// 			clearTimeout(timeout, current)
+// 		}
+// 	}
+// }, [current, length]);
 
 	if(!Array.isArray(slides) || slides.length <= 0) {
 		return null
 	}
 
 	const variants = {
-		hidden: { opacity: 0 },
-		visible: { opacity: 1, transition: { duration: 1 } },
+		hidden: { opacity: 0.2 },
+		visible: { opacity: 1, transition: { duration: 0.5 } },
 		exit: { opacity: 0 }
 	};
 
@@ -186,11 +186,20 @@ useEffect(() => { /* Задает автоматическое пролисты�
 									variants={variants}
 								/>
 									<HeroicContent>
-										<h1>{slide.title}</h1>
-										<p>{slide.price}</p>
+								{/*add aos animation*/}
+										<h1 data-aos='zoom-in-up'
+											 data-aos-duration='1000'>{slide.title}
+										</h1>
+										<p data-aos="fade-left"
+											data-aos-duration='1000'
+											data-aos-delay='500'>{slide.price}
+										</p>
 										<Button to={slide.path} 
 												  primary='true'
 												  style={{maxWidth: '160px'}}
+												  data-aos="fade-left"
+												  data-aos-duration='1000'
+												  data-aos-delay='800'
 										>
 											{slide.label}
 										<Arrow />

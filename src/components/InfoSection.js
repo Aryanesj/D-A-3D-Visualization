@@ -62,11 +62,19 @@ const ColumnRight = styled.div`
 	}
 `
 
-const InfoSection = ({heading, paragraphOne, paragraphTwo, buttonLabel, reverse, image}) => {
+const InfoSection = ({heading, paragraphOne, paragraphTwo, buttonLabel, reverse, image, delay}) => {
 	return (
 		<Section>
 			<Container>
-				<ColumnLeft>
+				<ColumnLeft
+					reverse={reverse}
+					data-aos='fade-up'
+					data-aos-duration='1000'
+					// -откл повтор анимации при прокрутке
+					data-aos-delay={delay}
+					data-aos-once='true'
+					data-aos-anchor-placement='center buttom'
+				>
 					<h1>{heading}</h1>
 					<p>{paragraphOne}</p>
 					<p>{paragraphTwo}</p>
@@ -75,7 +83,14 @@ const InfoSection = ({heading, paragraphOne, paragraphTwo, buttonLabel, reverse,
 					</Button>
 				</ColumnLeft>
 				<ColumnRight reverse={reverse}>
-					<img src={image} alt="home" />
+					<img src={image}
+						  alt="home" 
+						  data-aos='zoom-out'
+						  data-aos-duration='1000'
+						  data-aos-delay={delay}
+						  data-aos-once='true'
+						  data-aos-anchor-placement='center buttom'
+						  />
 				</ColumnRight>
 			</Container>
 		</Section>
