@@ -32,7 +32,7 @@ const FooterTop = styled.div`
 
 const Quote = styled.div`
 	flex: 1;
-	padding: 2rem 0rem;
+	padding: 1rem 0rem 1rem 0rem;
 
 	h3 {
 		font-size: clamp(2rem, 8vw, 5rem)
@@ -106,7 +106,7 @@ const Footer = () => {
 			<Container>
 				<FooterTop>
 					<Quote>
-						<h3>Let`s find <br /> your Dream Design</h3>
+						<h3>If you are interested<br />you can find<br/ >us here</h3>
 					</Quote>
 					<FooterInfo>
 						{/*<h4>Contact Us</h4>
