@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import styled, {css} from 'styled-components/macro'
 import { Button } from './Button.js'
-import { IoMdArrowRoundForward } from 'react-icons/io'
+import { FaLongArrowAltRight } from 'react-icons/fa'
 import { IoArrowForward, IoArrowBack } from 'react-icons/io5'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -88,9 +88,16 @@ const HeroicContent = styled.div`
 	}
 `
 
-const Arrow = styled(IoMdArrowRoundForward)`
+const Arrow = styled(FaLongArrowAltRight)`
 	margin-left: 0.5rem;
+	margin-top: 0.2rem;
+	font-size: 20px;
+	transition: 0.4s;
 
+	&:hover {
+ 		padding-left: 0.1rem;
+		color: #CD853F;
+	}
 `
 
 const SliderButtons = styled.div`
@@ -106,7 +113,7 @@ const arrowButtons = css`
 	height: 50px;
 	color: #fff;
 	cursor: pointer;
-	background: #000d1a;
+	background: #181616;
 	border-radius: 50px;
 	padding: 10px;
 	margin-right: 1rem;
@@ -115,7 +122,7 @@ const arrowButtons = css`
 
 	&:hover {
 		background: #CD853F;
-		transform: scale(1.05); /* Увеличение объекта */
+		transform: scale(1.07); /* Увеличение объекта */
 	}
 `
 
@@ -137,7 +144,6 @@ const nextSlide = () => {
 	if(timeout.current) {
 			clearTimeout(timeout, current)
 		}
-	// console.log(current)
 }
 
 const prevSlide = () => {
@@ -145,7 +151,6 @@ const prevSlide = () => {
 	if(timeout.current) {
 			clearTimeout(timeout, current)
 		}
-	// console.log(current)
 };
 
 // useEffect(() => { /* Задает автоматическое пролистывание слайдов */
@@ -188,15 +193,13 @@ const prevSlide = () => {
 									<HeroicContent>
 								{/*add aos animation*/}
 										<h1 data-aos='zoom-in-up'
-											 data-aos-duration='1000'>{slide.title}
+											 data-aos-duration='1000'>
+											 {slide.title}
 										</h1>
-										<p data-aos="fade-left"
-											data-aos-duration='1000'
-											data-aos-delay='500'>{slide.price}
-										</p>
 										<Button to={slide.path} 
 												  primary='true'
 												  style={{maxWidth: '160px'}}
+												  style={{marginTop: '5px'}}
 												  data-aos="fade-left"
 												  data-aos-duration='1000'
 												  data-aos-delay='800'

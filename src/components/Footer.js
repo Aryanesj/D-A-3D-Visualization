@@ -2,11 +2,11 @@ import React from 'react'
 import styled, { css } from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 import { Button } from './Button.js'
-import { IoMdArrowRoundForward } from 'react-icons/io'
-import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
+import { AiOutlineCheck } from 'react-icons/ai'
+import { FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 
 const Section = styled.section`
-	background: #000d1a;
+	background: #151b1e;
 	color: white;
 	width: 100%;
 	min-height: 600px;
@@ -40,11 +40,11 @@ const Quote = styled.div`
 `
 
 const FooterInfo = styled.div`
-	padding: 2rem;
+	padding: 1rem;
 	line-height: 3;
 	display: flex;
 	flex-direction: column;
-
+	
 	a {
 		color: white;
 		text-decoration: none;
@@ -66,7 +66,7 @@ const FooterBottom = styled.div`
 
 const SocialIcons = styled.div`
 	display: flex;
-	width: 50%;
+	width: 45%;
 
 	@media screen and (max-width: 768px) {
 		margin-bottom: 2rem;
@@ -84,15 +84,7 @@ const Instagram = styled(FaInstagram)`
 	${Icons};
 `
 
-const Facebook = styled(FaFacebookF)`
-	${Icons};
-`
-
 const LinkedIn = styled(FaLinkedinIn)`
-	${Icons};
-`
-
-const Youtube = styled(FaYoutube)`
 	${Icons};
 `
 
@@ -117,35 +109,33 @@ const Footer = () => {
 						<h3>Let`s find <br /> your Dream Design</h3>
 					</Quote>
 					<FooterInfo>
-						<h4>Contact Us</h4>
+						{/*<h4>Contact Us</h4>
 						<Link to='/homes'>FAQ</Link>
 						<Link to='/homes'>Support</Link>
-						<Link to='/homes'>Questions</Link>
+						<Link to='/homes'>Questions</Link>*/}
 					</FooterInfo>
 					<FooterInfo>
-						<h4>Offices</h4>
-						<Link to='/homes'>Poland</Link>
-						<Link to='/homes'>Canada</Link>
-						<Link to='/homes'>Ukraine</Link>
+						<h2 style={{letterSpacing: '2px'}}>Horizon Interiors</h2>
+						<h4>We</h4>
+						<h4>Work</h4>
+						<h4>Everywhere</h4>
 					</FooterInfo>
 				</FooterTop>
 				<FooterBottom>
 					<SocialIcons> {/*href='//название.(дабл слеш)'*/}
-						<a href="//www.google.com" rel='noopener noreferrer' target='_blank'>
-                     <Youtube />
-						</a>
-						<a href="//www.google.com" rel='noopener noreferrer' target='_blank'>
+						<a href="//www.instagram.com/horizon_interior.s/" rel='noopener noreferrer' target='_blank'>
                      <Instagram />
 						</a>
-						<a href="//www.google.com" rel='noopener noreferrer' target='_blank'>
-                     <Facebook />
-						</a>
-						<a href="//www.google.com" rel='noopener noreferrer' target='_blank'>
+						<a href="//www.linkedin.com/in/aryanesj/" rel='noopener noreferrer' target='_blank'>
                      <LinkedIn />
 						</a>
 					</SocialIcons>
 					<Contact>
-						<Button to='/homes'>Let`s chat <IoMdArrowRoundForward /></Button>
+						<Button to='/footer'style={{width: '100%', fontWeight: "bold"}}>Lets get in touch
+							<AiOutlineCheck 
+								style={{marginLeft: '7px', fontSize: '19px', color: 'white'}}
+							/>
+						</Button>
 					</Contact>
 				</FooterBottom>
 			</Container>

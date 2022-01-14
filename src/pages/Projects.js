@@ -1,10 +1,10 @@
 import React from 'react'
 import Listings from '../components/Listings.js'
 
-const Homes = () => {
+const Projects = () => {
 	return (
 		<Listings />
 	)
 }
 
-export default Homes
+export default Projects

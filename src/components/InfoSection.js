@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Button } from './Button.js'
 
 const Section = styled.section`
-	background: gray;
+	background: #414141;
 	width: 100%;
 	height: 100%;
 	padding: 4rem 0rem;
@@ -30,7 +30,7 @@ const ColumnLeft = styled.div`
 	order: ${({reverse}) => (reverse ? '2' : '1')};
 
 	h1 {
-		margin-bottom: 1rem;
+		margin-bottom: 2.5rem;
 		font-size: clamp(1.5rem, 6vw, 2rem);
 	}
 
@@ -69,16 +69,16 @@ const InfoSection = ({heading, paragraphOne, paragraphTwo, buttonLabel, reverse,
 				<ColumnLeft
 					reverse={reverse}
 					data-aos='fade-up'
-					data-aos-duration='1000'
+					data-aos-duration='900'
 					// -откл повтор анимации при прокрутке
-					data-aos-delay={delay}
+					data-aos-delay='600'
 					data-aos-once='true'
 					data-aos-anchor-placement='center buttom'
 				>
-					<h1>{heading}</h1>
-					<p>{paragraphOne}</p>
-					<p>{paragraphTwo}</p>
-					<Button to='/homes' primary='true'>
+					<h1 style={{color: 'white'}}>{heading}</h1>
+					<p style={{color: '#ddd9d9', fontSize: '18px'}}>{paragraphOne}</p>
+					<p style={{color: '#ddd9d9', fontSize: '18px'}}>{paragraphTwo}</p>
+					<Button to='/homes' primary='true' style={{fontWeight: "bold", marginTop: '20px'}}>
 						{buttonLabel}
 					</Button>
 				</ColumnLeft>
@@ -86,8 +86,8 @@ const InfoSection = ({heading, paragraphOne, paragraphTwo, buttonLabel, reverse,
 					<img src={image}
 						  alt="home" 
 						  data-aos='zoom-out'
-						  data-aos-duration='1000'
-						  data-aos-delay={delay}
+						  data-aos-duration='700'
+						  data-aos-delay='200'
 						  data-aos-once='true'
 						  data-aos-anchor-placement='center buttom'
 						  />

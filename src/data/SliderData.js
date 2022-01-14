@@ -5,33 +5,33 @@ import ImageFour from '../images/house4.jpg'
 
 export const SliderData = [
 	{
-		title: 'Курва де ла бляда, Пильша',
-		price: '$69,000',
-		path: '/homes',
+		title: 'Chic 3D Design',
+		// price: '$69,000',
+		path: '/projects',
 		label: 'Viev design',
 		image: ImageOne,
 		alt: 'Room'
 	},
 	{
-		title: 'Паршивая Сунь Поза, Костя рока',
-		price: '$29,000',
-		path: '/homes',
+		title: 'Chic 3D Design',
+		// price: '$29,000',
+		path: '/projects',
 		label: 'Viev design',
 		image: ImageTwo,
 		alt: 'Room'
 	},
 	{
-		title: 'Сарай Калюбасас, Каляфарния',
-		price: '$39,000',
-		path: '/homes',
+		title: 'Chic 3D Design',
+		// price: '$39,000',
+		path: '/projects',
 		label: 'Viev design',
 		image: ImageThree,
 		alt: 'Room'
 	},
 	{
-		title: 'Толкан ун Хьюстон, Техакс',
-		price: '$109,000',
-		path: '/homes',
+		title: 'Chic 3D Design',
+		// price: '$109,000',
+		path: '/projects',
 		label: 'Viev design',
 		image: ImageFour,
 		alt: 'Room'

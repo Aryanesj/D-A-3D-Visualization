@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { IoMdArrowRoundForward } from 'react-icons/io'
+import { FaLongArrowAltRight } from 'react-icons/fa'
 import DesignOne from '../images/design-1.jpg'
 import DesignTwo from '../images/design-2.jpg'
 
 const Section = styled.section`
 	width: 100%;
 	height: 100%;
-	padding: 10rem calc((100vw - 1300px) / 2);
-	background-color: #666666;
+	padding: 3rem calc((100vw - 1300px) / 2);
+	background-color: #525252;
 `
 
 const Container = styled.div`
@@ -22,6 +22,7 @@ const Heading = styled.div`
 	font-size: 1.5rem;
 	padding: 2rem 1rem;
 	margin-bottom: 40px;
+	letter-spacing: 1.5px;
 
 	@media screen and(max-width: 768px) {
 		text-align: start;
@@ -35,6 +36,7 @@ const InfoRow = styled.div`
 
 	@media screen and (max-width: 768px) {
 		flex-direction: column;
+		margin-bottom: 0rem;
 	}
 `
 
@@ -81,15 +83,24 @@ const InfoLink = styled(Link)`
 	align-items: center;
 	text-decoration: none;
 	color: white;
-	width: 140px;
+	width: 190px;
+	height: 25px;
 	transition: 0.4s;
+	letter-spacing: 1.5px;
+	font-weight: bold;
+	margin-top: 25px;
+
+	p {
+		padding-left: 15px;
+	}
 
 	&:hover {
-		transform: translateY(-2px);
+		transform: translateX(3px);
+		transition: 0.4s;
 	}
 `
 
-const Arrow = styled(IoMdArrowRoundForward)`
+const Arrow = styled(FaLongArrowAltRight)`
 	margin-left: 10px;
 `
 
@@ -104,7 +115,7 @@ const Listings = () => {
 						data-aos-delay='250'
 						data-aos-once='true'
 						data-aos-anchor-placement='center bottom'
-					>View our newest Design</h1>
+					>View our newest projects</h1>
 				</Heading>
 				<InfoRow>
 					<InfoWrap
@@ -115,7 +126,7 @@ const Listings = () => {
 						data-aos-anchor-placement='center bottom'
 					>
 						<Image src={DesignOne} alt='design' />
-						<h2>8 bed 10 bath House in Venice, California</h2>
+						<h2>The first draft of the room visualization</h2>
 						<InfoLink to='/'>
 							<p>View details</p>
 							<Arrow />
@@ -129,7 +140,7 @@ const Listings = () => {
 						data-aos-anchor-placement='center bottom'
 					>
 						<ImageTwo src={DesignTwo} alt='design' />
-						<h2>4 bed 2 bath House in Kiev, Usraina</h2>
+						<h2>The second draft of the room visualization</h2>
 						<InfoLink to='/'>
 							<p>View details</p>
 							<Arrow />

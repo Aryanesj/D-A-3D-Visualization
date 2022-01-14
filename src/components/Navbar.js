@@ -23,11 +23,12 @@ const NavLink = css`
  	height: 100%;
  	cursor: pointer;
  	text-decoration: none;
+ 	transition: 0.4s;
  `
 
 const Logo = styled(Link)`
 	${NavLink}
-	font-style: italic;
+	letter-spacing: 2px;
  `
 
 const MenuBars = styled(FaBars)`
@@ -64,6 +65,12 @@ const NavMenu = styled.div`
 
 const NavMenuLinks = styled(Link)`
  	${NavLink}
+
+ 	&:hover {
+ 		-webkit-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.35);
+		-moz-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.35);
+		box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.35);
+ 	}
  `
 
 const Navbar = ({toggle}) => {
@@ -97,7 +104,11 @@ const Navbar = ({toggle}) => {
 
 	return (
 		<Nav style={style}>
-			<Logo to='/'>There Logo</Logo>
+			<Logo to='/'
+					data-aos="zoom-out" 
+					data-aos-delay='1000'
+					data-aos-duration='2000'
+					>Horizon Interiors</Logo>
 			<MenuBars onClick={toggle}/>
 			<NavMenu>
 				{menuData.map((item, index) => (
@@ -107,7 +118,7 @@ const Navbar = ({toggle}) => {
 				))}
 			</NavMenu>
 			<NavBtn>
-				<Button to='/contact' primary='true'>
+				<Button to='/footer' primary='true'>
 					Contact Us
 				</Button>
 			</NavBtn>

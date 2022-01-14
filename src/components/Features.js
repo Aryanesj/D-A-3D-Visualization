@@ -4,7 +4,7 @@ import { Button } from './Button.js'
 import ImageOne from '../images/office.jpg'
 
 const Section = styled.section`
-	background: #464444;
+	background: #313131;
 	padding: 12rem 0rem;
 	display: flex;
 	flex-direction: column;

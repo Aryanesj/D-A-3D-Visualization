@@ -6,7 +6,7 @@ import Footer from './components/Footer.js'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Home from './pages'
 import About from './pages/About.js'
-import Homes from './pages/Homes'
+import Projects from './pages/Projects.js'
 import Contact from './pages/Contact.js'
 import Rentals from './pages/Rentals.js'
 import Aos from 'aos'
@@ -40,7 +40,7 @@ function App() {
         <Routes>
           <Route path='/' exact element={<Home/>} />
           <Route path='/about' element={<About/>} />
-          <Route path='/homes' element={<Homes/>} />
+          <Route path='/projects' element={<Projects/>} />
           <Route path='/rentals' element={<Rentals/>} />
           <Route path='/contact' element={<Contact/>} />
         </Routes>
